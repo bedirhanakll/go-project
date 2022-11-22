@@ -1,0 +1,25 @@
+{{ define "content"}}
+<!-- Breadcrumb Section Begin -->
+<img src="assets/img/arabuluculuk.jpeg" class="w-100" style="height: 400px;">
+
+<!-- Breadcrumb Section End -->
+
+<!-- Blog Section Begin -->
+<section class="blog spad">
+  <div class="container">
+    <div class="row">
+      {{ range $index, $value := .Ilan }}
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="blog__item">
+          <div class="blog__item__text">
+            <h5>{{ $value.Title }}</h5>
+            <a href="/ilanlar/{{ $value.Title }}">Read More</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- Blog Section End -->
+{{ end }}

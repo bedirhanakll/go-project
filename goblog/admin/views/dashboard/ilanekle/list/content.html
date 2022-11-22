@@ -1,0 +1,30 @@
+{{ define "content" }}
+<h1>
+  İş İlanları
+  <a href="/admin/ilan-ekle" class="btn btn-outline-primary float-right"><i class="fa fa-plus"></i> Yeni İlan Ekle</a>
+</h1>
+<hr>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Başlık</th>
+    <th scope="col">Eklenme Tarihi</th>
+    <th scope="col">İşlemler</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{ range $index,$value := .Ilans }}
+  <tr>
+    <th scope="row">{{ $value.ID }}</th>
+    <td>{{ $value.Title }}</td>
+    <td>{{ $value.CreatedAt }}</td>
+    <td>
+      <a href="/admin/ilanedit/{{ $value.ID }}" class="btn btn-outline-warning"><i class="fa fa-pen"></i></a>
+      <a href="/admin/ilandelete/{{ $value.ID }}" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+    </td>
+  </tr>
+  {{ end }}
+  </tbody>
+</table>
+{{ end }}

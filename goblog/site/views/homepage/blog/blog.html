@@ -1,0 +1,17 @@
+{{ define "blog"}}
+<!DOCTYPE html>
+<html lang="zxx">
+{{template "head"}}
+<body>
+{{ template "header"}}
+
+    {{ template "content" . }}
+
+{{template "footer"}}
+
+    <!-- Js Plugins -->
+{{ template "scripts"}}
+</body>
+
+</html>
+{{ end }}

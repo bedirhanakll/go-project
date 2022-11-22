@@ -1,0 +1,22 @@
+{{ define "content" }}
+<h1>
+  Yeni İlan Ekle
+  <a href="/admin/ilan" class="btn btn-outline-primary float-right"><i class="fa fa-arrow-left"></i> Geri Dön</a>
+</h1>
+<hr>
+<form action="/admin/ilanadd" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>İş Tanımı</label>
+    <input type="text" name="blog-title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Yan Haklar:</label>
+    <textarea name="blog-desc" cols="30" rows="2" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Aranan Nitelikler</label>
+    <textarea name="blog-content" id="summernote" cols="30" rows="2" class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-success w-100 my-3">Kaydet</button>
+</form>
+{{ end }}

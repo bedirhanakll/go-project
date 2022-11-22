@@ -1,0 +1,85 @@
+{{ define "content" }}
+<h1>
+  Kayıt Düzenle
+  <a href="/admin/urunler" class="btn btn-outline-primary float-right"><i class="fa fa-arrow-left"></i> Geri Dön</a>
+</h1>
+<hr>
+<form action="/admin/urunupdate/{{ .Urun.ID }}" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>Ürün Başlığı</label>
+    <input type="text" name="urun-title" class="form-control" value="{{ .Urun.Title }}">
+  </div>
+  <div class="form-group">
+    <label>Ürün Fiyatı</label>
+    <input type="text" name="urun-fiyat" class="form-control" value="{{ .Urun.Fiyat }}">
+  </div>
+  <div class="form-group">
+    <label>Ürün Videosu</label>
+    <textarea name="urun-desc" cols="30" rows="2" class="form-control">{{ .Urun.Description }}</textarea>
+  </div>
+  <div class="form-group">
+    <label>Kategori</label>
+    <select name="urun-category" class="form-control" >
+      {{ $categoryID := .Urun.CategoryID }}
+      {{ range $index,$value := .UrunCategories }}
+      <option {{ if eq $value.ID $categoryID }} selected {{ end }} value="{{ $value.ID }}">{{ $value.Title }}</option>
+      {{ end }}
+    </select>
+  </div>
+  <div class="form-group">
+    <img width="100px" src="/{{ .Urun.Picture_url }}" class="my-2" id="current-picture">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture" class="form-control-file" id="file-upload">
+    <input type="hidden" name="is_selected" id="is_selected" value="0">
+  </div>
+  <div class="form-group">
+    <img width="100px" src="/{{ .Urun.Picture_url1 }}" class="my-2" id="current-picture1">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture1" class="form-control-file" id="file-upload1">
+    <input type="hidden" name="is_selected1" id="is_selected1" value="0">
+  </div>
+  <div class="form-group">
+    <img width="100px" src="/{{ .Urun.Picture_url2 }}" class="my-2" id="current-picture2">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture2" class="form-control-file" id="file-upload2">
+    <input type="hidden" name="is_selected2" id="is_selected2" value="0">
+  </div>
+  <div class="form-group">
+    <img width="100px" src="/{{ .Urun.Picture_url3 }}" class="my-2" id="current-picture3">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture3" class="form-control-file" id="file-upload3">
+    <input type="hidden" name="is_selected3" id="is_selected3" value="0">
+  </div>
+  <div class="form-group">
+    <label>Ürün Açıklaması</label>
+    <textarea name="urun-content" id="summernote" cols="30" rows="2" class="form-control">{{ .Urun.Content }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-success w-100 my-3">Güncelle</button>
+</form>
+<script>
+  document.getElementById("file-upload").addEventListener("change",function (){
+    document.getElementById("is_selected").setAttribute("value","1")
+    document.getElementById("current-picture").style.display = "none"
+  })
+  document.getElementById("file-upload1").addEventListener("change",function (){
+    document.getElementById("is_selected1").setAttribute("value","1")
+    document.getElementById("current-picture1").style.display = "none"
+  })
+  document.getElementById("file-upload2").addEventListener("change",function (){
+    document.getElementById("is_selected2").setAttribute("value","1")
+    document.getElementById("current-picture2").style.display = "none"
+  })
+  document.getElementById("file-upload3").addEventListener("change",function (){
+    document.getElementById("is_selected3").setAttribute("value","1")
+    document.getElementById("current-picture3").style.display = "none"
+  })
+  document.getElementById("file-upload4").addEventListener("change",function (){
+    document.getElementById("is_selected4").setAttribute("value","1")
+    document.getElementById("current-picture4").style.display = "none"
+  })
+  document.getElementById("file-upload5").addEventListener("change",function (){
+    document.getElementById("is_selected5").setAttribute("value","1")
+    document.getElementById("current-picture5").style.display = "none"
+  })
+</script>
+{{ end }}

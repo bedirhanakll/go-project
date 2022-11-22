@@ -1,0 +1,47 @@
+{{ define "header" }}  
+   <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+   <div class="offcanvas-menu-overlay"></div>
+   <div class="offcanvas-menu-wrapper">
+       <div class="offcanvas__option">
+           <div class="offcanvas__links">
+               <a href="/">Ana Sayfa</a>
+               <a href="#">Kurumsal</a>
+           </div>
+
+       </div>
+
+       <div id="mobile-menu-wrap"></div>
+   </div>
+   <!-- Offcanvas Menu End -->
+    <!-- Header Section Begin -->
+    <header class="header">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./"><img src="/assets/img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="/">Ana Sayfa</a></li>
+                            <li><a href="/kurumsal">Kurumsal</a></li>
+
+                            <li><a href="./shop.html">Ürünler</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./about.html">İş ilanı</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+	{{ end }}

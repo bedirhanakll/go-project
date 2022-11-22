@@ -1,0 +1,41 @@
+{{ define "content"}}
+<!-- Breadcrumb Section Begin -->
+{{ range $index, $value := .Kurums }}
+<section class="breadcrumb-blog set-bg" data-setbg="{{ $value.Picture_url }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Our Blog</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Blog Section Begin -->
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-10 mx-auto">
+      <div class="post-heading">
+        <h1>       ------------------                 </h1>
+
+        <h1> HAKKIMIZDA </h1>
+
+        <h4>{{ $value.Title }}</h4>
+        <h1>       ------------------                 </h1>
+
+        <h1> MİSYON VE VİZYON  </h1>
+
+        <h4>{{ $value.Description }}</h4>
+        <h1>       ------------------                 </h1>
+      </div>
+    </div>
+  </div>
+</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- Blog Section End -->
+{{ end }}

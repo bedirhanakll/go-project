@@ -1,0 +1,50 @@
+{{ define "content" }}
+<h1>
+  Yeni Ürün Ekle
+  <a href="/admin/urunler" class="btn btn-outline-primary float-right"><i class="fa fa-arrow-left"></i> Geri Dön</a>
+</h1>
+<hr>
+<form action="/admin/urunadd" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>Ürün Başlığı</label>
+    <input type="text" name="urun-title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Ürün Fiyatı</label>
+    <input type="text" name="urun-fiyat" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Ürün Videosu</label>
+    <textarea name="urun-desc" cols="30" rows="2" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Kategori</label>
+    <select name="urun-category" class="form-control" >
+      {{ range $index,$value := .UrunCategories }}
+      <option value="{{ $value.ID }}">{{ $value.Title }}</option>
+      {{ end }}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture" class="form-control-file">
+  </div>
+  <div class="form-group">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture1" class="form-control-file">
+  </div>
+  <div class="form-group">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture2" class="form-control-file">
+  </div>
+  <div class="form-group">
+    <label>Ürün Görseli</label>
+    <input type="file" name="urun-picture3" class="form-control-file">
+  </div>
+  <div class="form-group">
+    <label>Ürün Açıklaması</label>
+    <textarea name="urun-content" id="summernote" cols="30" rows="2" class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-success w-100 my-3">Kaydet</button>
+</form>
+{{ end }}
